@@ -24,7 +24,7 @@ function rcnw_room_list_home( $atts, $content ) {
 	        $out .= '<div class="singleroombox">
 				<p class="roomboxthumbnail">'.get_the_post_thumbnail().'</p>
 	            <h5><a href="'.get_permalink().'" title="' . get_the_title() . '">'.get_the_title() .'</a></h5>
-	            <p class="event_desc">'.get_the_content().'</p>';
+	            <p class="room_desc">'.get_the_content().'</p>';
 	            // add here more...
 	        $out .= '</div>';
 			

@@ -13,12 +13,12 @@ License: GPLv2
 /*******************************************
 * Plugin CONSTANT
 ********************************************/
-define( 'RCEV_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
-define( 'RCEV_PLUGIN_URL' , plugin_dir_url( __FILE__ ) );
-define( 'RCEV_TEXT_DOMAIN', 'cherry-events' );
-define( 'RCEV_SLUG',        'cherry-events' );
+define( 'RCRO_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
+define( 'RCRO_PLUGIN_URL' , plugin_dir_url( __FILE__ ) );
+define( 'RCRO_TEXT_DOMAIN', 'cherry-events' );
+define( 'RCRO_SLUG',        'cherry-events' );
 
-define( 'RCEV_SETTINGS_KEY', 'RCEV_Gallery_Settings_');
+define( 'RCRO_SETTINGS_KEY', 'RCRO_Settings_');
 
 /*******************************************
 * Global Variables
