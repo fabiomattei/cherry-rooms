@@ -1,0 +1,19 @@
+.roomboxcontainer {
+	text-align: center;
+}
+.roombox {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-direction: row;
+	-ms-flex-direction:     row;
+	flex-direction:         row;
+	-webkit-justify-content: center;
+	-ms-flex-pack:           center;
+	justify-content:         center;
+}
+.singleroombox {
+	flex: 1 1 300px;
+	margin: 0px 0 25px !important;
+	padding: 0 25px 0;
+}
