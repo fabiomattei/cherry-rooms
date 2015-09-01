@@ -1,19 +1,13 @@
 .roomboxcontainer {
 	text-align: center;
+	max-width: 100%;
 }
 .roombox {
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-flex-direction: row;
-	-ms-flex-direction:     row;
-	flex-direction:         row;
-	-webkit-justify-content: center;
-	-ms-flex-pack:           center;
-	justify-content:         center;
+	max-width: 100%;
 }
 .singleroombox {
-	flex: 1 1 300px;
+	float: left;
 	margin: 0px 0 25px !important;
 	padding: 0 25px 0;
+	max-width: 33%;
 }
