@@ -12,9 +12,17 @@ function RCSL_Cherry_Room_ShortCode_Detect() {
 		if ( strpos($Post->post_content, 'RCRoomListHome' ) ) {
 			// loading css scripts
 			wp_enqueue_style('rcro-css', RCRO_PLUGIN_URL.'css/rooms.css');
-
-            break;
         } //end of if
+		
+		if ( strpos($Post->post_content, 'RCRoomListHome' ) ) {
+			// loading js scripts
+			wp_enqueue_style('rcro-jquerycss', RCRO_PLUGIN_URL.'lib/jquery-ui/jquery-ui.css');
+			wp_enqueue_script('rcro-jqueryui-javascript', RCRO_PLUGIN_URL.'lib/jquery-ui/jquery-ui.min.js', array('jquery'), '', true);
+			wp_enqueue_script('rcro-datepicker-javascript', RCRO_PLUGIN_URL.'js/rooms.js', '', '', true);
+			
+			
+        } //end of if
+		
     } //end of foreach
 }
 add_action( 'wp', 'RCSL_Cherry_Room_ShortCode_Detect' );
