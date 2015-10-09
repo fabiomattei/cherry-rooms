@@ -69,7 +69,7 @@ function html_form_code() {
 			
 	$posts = new WP_Query( $atts );
 	$out = '
-		<div class="roomboxcontainer">
+		<div class="roomformboxcontainer">
 				<h4>Book a room</h4>
 					<div class="roombox">
 					<input type="text" id="datepicker">
