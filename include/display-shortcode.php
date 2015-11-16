@@ -70,10 +70,13 @@ function html_form_code() {
 	$posts = new WP_Query( $atts );
 	$out = '
 		<div class="roomformboxcontainer">
+			<div class="roomformtitlewrapper">
 				<h4>Book a room</h4>
-					<div class="roombox">
-					<input type="text" id="datepicker">
-					<input type="text" id="datepicker2">
+			</div>
+			<div class="roomform">
+				<input type="text" name="email" placeholder="email" >
+				<input type="text" id="datepicker">
+				<input type="text" id="datepicker2">
 					<select>';
 	
 	if ($posts->have_posts()) {
