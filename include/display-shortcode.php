@@ -22,9 +22,22 @@ function rcnw_room_list_home( $atts, $content ) {
 		
 	    while ($posts->have_posts()) {
 	        $posts->the_post();
-			
+
+	        $room_currency = '';
+	        switch (get_post_meta($post->ID, 'room_currency', true)) {
+	        	case '': $room_currency=''; break;
+	        	case 'room_none': $room_currency=''; break;
+    			case 'room_USD': $room_currency='$'; break;
+    			case 'room_EUR': $room_currency='&euro;'; break;
+    			case 'room_GBP': $room_currency='&pound;'; break;
+    			case 'room_JPY': $room_currency='&yen;'; break;
+    			case 'room_CNY': $room_currency='&yuan;'; break;
+			}
+
 	        $out .= '<div class="singleroombox">
-				<p class="roomboxthumbnail">'.get_the_post_thumbnail().'</p>
+				<p class="roomboxthumbnail">'.get_the_post_thumbnail().'
+				<span class="roomprice">'.get_post_meta($post->ID, 'room_price', true).' '.$room_currency.'</span>
+				</p>
 	            <h5><a href="'.get_permalink().'" title="' . get_the_title() . '">'.get_the_title() .'</a></h5>
 	            <p class="room_desc">'.get_the_content().'</p>';
 	            // add here more...
