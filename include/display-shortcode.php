@@ -68,7 +68,6 @@ function rcnw_room_list_home( $atts, $content ) {
 }
 add_shortcode( 'RCRoomListHome', 'rcnw_room_list_home' );
 
-
 /**
  * This function handle the short code
  */
@@ -87,10 +86,22 @@ function html_form_code() {
 				<h4>Book a room</h4>
 			</div>
 			<div class="roomform">
-				<input type="text" name="email" placeholder="email" >
-				<input type="text" id="datepicker">
-				<input type="text" id="datepicker2">
-					<select>';
+			<form method="post">
+				<div class="room-big-field-container">
+					<input type="text" name="rm-name" placeholder="name" >
+				</div> <!-- .room-big-field-container -->
+				<div class="room-big-field-container">
+					<input type="text" name="rm-email" placeholder="email" >
+				</div> <!-- .room-big-field-container -->
+				<div class="room-small-field-container">
+					<input type="text" id="datepicker" name="rm-arrival" placeholder="arrival">
+				</div> <!-- .room-small-field-container -->
+				<div class="room-small-field-container">
+				<input type="text" id="datepicker2" name="rm-departure" placeholder="departure">
+				</div> <!-- .room-small-field-container -->
+				<div class="room-small-field-container">
+					<select name="rm-room">';
+		$out .= '<option value="no room selected">room</option>';
 	
 	if ($posts->have_posts()) {
 		
@@ -105,20 +116,9 @@ function html_form_code() {
 		return; // no posts found
 	}
 	$out .= '</select>';
-	$out .= '<select>';
-	$out .= '<option value="0">Adults</option>';
-	$out .= '<option value="1">1</option>';
-	$out .= '<option value="2">2</option>';
-	$out .= '<option value="3">3</option>';
-	$out .= '<option value="4">4</option>';
-	$out .= '</select>';
-	$out .= '<select>';
-	$out .= '<option value="0">Children</option>';
-	$out .= '<option value="1">1</option>';
-	$out .= '<option value="2">2</option>';
-	$out .= '<option value="3">3</option>';
-	$out .= '<option value="4">4</option>';
-	$out .= '</select>';
+	$out .= '</div> <!-- .room-small-field-container -->';
+	$out .= '<input type="submit" value="Send" name="rm-submitted">';
+	$out .= '</form>';
 	$out .= '</div>'; // ending roombox
 	$out .= '</div>'; // ending roomboxcontainer
 	
@@ -128,23 +128,31 @@ function html_form_code() {
 function deliver_mail() {
 
     // if the submit button is clicked, send the email
-    if ( isset( $_POST['cf-submitted'] ) ) {
+    if ( isset( $_POST['rm-submitted'] ) ) {
 
         // sanitize form values
-        $name    = sanitize_text_field( $_POST["cf-name"] );
-        $email   = sanitize_email( $_POST["cf-email"] );
-        $subject = sanitize_text_field( $_POST["cf-subject"] );
-        $message = esc_textarea( $_POST["cf-message"] );
+        $name    = sanitize_text_field( $_POST["rm-name"] );
+        $email   = sanitize_email( $_POST["rm-email"] );
+		
+		$arrival = sanitize_text_field( $_POST["rm-arrival"] );
+		$departure = sanitize_text_field( $_POST["rm-departure"] );
+		$room = sanitize_text_field( $_POST["rm-room"] );
+		
+		$subject = 'Reservation from '.$arrival.' to '.$departure;
+		$message = $subject.' for room: '.$room;
+		/*
+        $subject = sanitize_text_field( $_POST["rm-subject"] );
+        $message = esc_textarea( $_POST["rm-message"] );
+		*/
 
         // get the blog administrator's email address
         $to = get_option( 'admin_email' );
-
         $headers = "From: $name <$email>" . "\r\n";
 
         // If email has been process for sending, display a success message
         if ( wp_mail( $to, $subject, $message, $headers ) ) {
             echo '<div>';
-            echo '<p>Thanks for contacting me, expect a response soon.</p>';
+            echo '<p>Thanks for contacting us, expect a response soon.</p>';
             echo '</div>';
         } else {
             echo 'An unexpected error occurred';
