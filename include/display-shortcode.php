@@ -12,11 +12,11 @@ function rcnw_room_list_home( $atts, $content ) {
 			);
 			
 	$posts = new WP_Query( $atts );
-	$out = '<div class="roomboxcontainer">
-				<div class="roomtitlewrapper">
-					<h4 class="roomtitle">Our rooms</h4>
+	$out = '<div class="external-post-horizontal-list-container">
+				<div class="post-horizontal-list-title-wrapper">
+					<h4 class="post-horizontal-list-title">Our rooms</h4>
 				</div>
-					<div class="roombox">';
+					<div class="post-horizontal-list-box">';
 	
 	if ($posts->have_posts()) {
 		
@@ -34,31 +34,22 @@ function rcnw_room_list_home( $atts, $content ) {
     			case 'room_CNY': $room_currency='&yuan;'; break;
 			}
 
-	        $out .= '<div class="singleroombox">
-				<p class="roomboxthumbnail">'.get_the_post_thumbnail().'
-				<span class="roomprice">'.get_post_meta($post->ID, 'room_price', true).' '.$room_currency.'</span>
+	        $out .= '<div class="singlepost-horizontal-list-box">
+				<p class="post-horizontal-list-boxthumbnail">'.get_the_post_thumbnail().'
+				<span class="post-horizontal-list-write-over-img">'.get_post_meta($post->ID, 'room_price', true).' '.$room_currency.'</span>
 				</p>
 	            <h5><a href="'.get_permalink().'" title="' . get_the_title() . '">'.get_the_title() .'</a></h5>
-	            <p class="room_desc">'.get_the_content().'</p>';
+	            <p class="post-horizontal-list-desc">'.get_the_content().'</p>';
 	            // add here more...
 	        $out .= '</div>';
-			
-	/* these arguments will be available from inside $content
-	    get_permalink()  
-	    get_the_content()
-	    get_the_category_list(', ')
-	    get_the_title()
-	    and custom fields
-	    get_post_meta($post->ID, 'field_name', true);
-	*/
 	
 		} // end while loop
 		
 	} else {
 		return; // no posts found
 	}
-	$out .= '</div>'; // ending roombox
-	$out .= '</div>'; // ending roomboxcontainer
+	$out .= '</div>'; // ending post-horizontal-list-box
+	$out .= '</div>'; // ending external-post-horizontal-list-container
 	
 	ob_start();
 
@@ -66,7 +57,10 @@ function rcnw_room_list_home( $atts, $content ) {
 	
     return ob_get_clean();
 }
+
 add_shortcode( 'RCRoomListHome', 'rcnw_room_list_home' );
+
+// rename to horizontal list
 
 /**
  * This function handle the short code
@@ -119,8 +113,8 @@ function html_form_code() {
 	$out .= '</div> <!-- .room-small-field-container -->';
 	$out .= '<input type="submit" value="Send" name="rm-submitted">';
 	$out .= '</form>';
-	$out .= '</div>'; // ending roombox
-	$out .= '</div>'; // ending roomboxcontainer
+	$out .= '</div>'; // ending post-horizontal-list-box
+	$out .= '</div>'; // ending external-post-horizontal-list-container
 	
 	echo $out;
 }
@@ -169,3 +163,5 @@ function rcnw_room_form() {
 }
 
 add_shortcode( 'RCRoomForm', 'rcnw_room_form' );
+
+
