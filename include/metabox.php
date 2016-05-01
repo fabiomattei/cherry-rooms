@@ -1,24 +1,37 @@
 <?php
+
+/**
+ * This class helps to dial with some setting, connected with the cherry-rooms
+ * custom post type.
+ * For each room the user can set two variables:
+ * * price
+ * * currency
+ */
 class Room_Price_Meta_Box {
 
+	/**
+	 * The constructor cares about activating the class and connecting the class
+	 * to the right actions
+	 */
 	public function __construct() {
-
 		if ( is_admin() ) {
 			add_action( 'load-post.php',     array( $this, 'init_metabox' ) );
 			add_action( 'load-post-new.php', array( $this, 'init_metabox' ) );
 		}
-
 	}
 
+	/**
+	 * Add actions for showing the metabox and saving the data for each post
+	 */
 	public function init_metabox() {
-
 		add_action( 'add_meta_boxes', array( $this, 'add_metabox'  )        );
 		add_action( 'save_post',      array( $this, 'save_metabox' ), 10, 2 );
-
 	}
 
+	/**
+	 * Adding metabox to the right form
+	 */
 	public function add_metabox() {
-
 		add_meta_box(
 			'room_price',
 			__( 'Room Price', 'rcnw' ),
@@ -27,9 +40,13 @@ class Room_Price_Meta_Box {
 			'advanced',
 			'default'
 		);
-
 	}
 
+	/**
+	 * @param $post
+	 *
+	 * Rendering metabox form
+	 */
 	public function render_metabox( $post ) {
 
 		// Add nonce for security and authentication.
@@ -72,6 +89,12 @@ class Room_Price_Meta_Box {
 
 	}
 
+	/**
+	 * @param $post_id
+	 * @param $post
+	 *
+	 * Saving metabox data
+	 */
 	public function save_metabox( $post_id, $post ) {
 
 		// Add nonce for security and authentication.
@@ -110,4 +133,5 @@ class Room_Price_Meta_Box {
 
 }
 
+// Instantiating the class
 new Room_Price_Meta_Box;
