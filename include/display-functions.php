@@ -11,7 +11,7 @@ function RCSL_Cherry_Room_ShortCode_Detect() {
     foreach ($Posts as $Post) {
 		if ( strpos($Post->post_content, 'RCRoomListHome' ) ) {
 			// loading css scripts
-			wp_enqueue_style('rcro-css', RCRO_PLUGIN_URL.'css/rooms.css');
+			wp_enqueue_style('rcro-css', RCRO_PLUGIN_URL.'css/rcbackbone.css');
         } //end of if
 		
 		if ( strpos($Post->post_content, 'RCRoomListHome' ) ) {
