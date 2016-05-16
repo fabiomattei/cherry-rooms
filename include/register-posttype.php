@@ -35,7 +35,7 @@ function rcnw_create_room_post_type() {
 		'show_in_menu'       => true,
 		'show_in_nav_menus'  => true,
 		'query_var'          => true,
-		'rewrite'            => array( 'slug' => 'room' ),
+		'rewrite'            => array( 'slug' => 'rcnwroom' ),
 		'capability_type'    => 'post',
 		'has_archive'        => true,
 		'hierarchical'       => false,
