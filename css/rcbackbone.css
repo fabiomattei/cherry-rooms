@@ -14,19 +14,8 @@
 	max-width: 33%;
 }
 
-.roomformboxcontainer {
-	background-color: $beige3;
-	padding-top: 2px;
-}
-
 .post-horizontal-list-title-wrapper {
 	background-image: url("../img/dots.png");
-	background-repeat: repeat-x;
-	background-position: center;
-	text-align: center;
-}
-
-.roomformtitlewrapper {
 	background-repeat: repeat-x;
 	background-position: center;
 	text-align: center;
@@ -37,87 +26,6 @@
     text-align: center;
     background-color: $beige1;
     padding: 12px 30px 12px;
-}
-
-.roomform form {
-	
-	padding: 0 25px 25px;
-	
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	
-	.room-big-field-container {
-		-webkit-flex: 2;
-		-ms-flex:     2;
-		flex:         2;
-		margin-right: 25px;
-	}
-	
-	.room-small-field-container {
-		-webkit-flex: 1;
-		-ms-flex:     1;
-		flex:         1;
-		margin-right: 25px;
-	}
-	
-	input[type="text"],
-	input[type="email"],
-	input[type="url"],
-	input[type="password"],
-	input[type="search"],
-	select {
-		padding: 6px 0 6px 15px;
-		margin: 0 !important;
-	    -webkit-box-sizing: border-box;
-	       -moz-box-sizing: border-box;
-	            box-sizing: border-box;
-	}
-	
-	select {
-		width: 100%;
-		-webkit-border-radius: 0px;
-		-moz-border-radius: 0px;
-		border-radius: 0px;
-		outline:none;
-		display: inline-block;
-		-webkit-appearance:none;
-		-moz-appearance:none;
-		appearance:none;
-		cursor:pointer;
-		line-height: 24px;
-		color: $color__text-input;
-		font-family: $font__titles;
-		font-size: 1.6rem;
-		border: 1px solid $color__border-input;
-		border-radius: 0;
-		background-color: $color__text-input-background;
-	}
-	
-	button,
-	input[type="button"],
-	input[type="reset"],
-	input[type="submit"] {
-		margin:0;
-	}
-
-	
-}
-
-.latestposts-titlewrapper {
-	background-image: url("../img/dots.png");
-	background-repeat: repeat-x;
-	background-position: center;
-	height: 150px;
-	line-height: 150px;
-	text-align: center;
-}
-
-.latestposts-title {
-    display: inline;
-    text-align: center;
-    background-color: $beige1;
-    padding: 12px 30px;
 }
 
 .post-horizontal-list-boxthumbnail:hover img {
@@ -144,4 +52,79 @@
    color: $green1 !important;
    font-size: 18px !important;
    font-weight: bold !important;
+}
+
+/* room form css */
+
+.roomformboxcontainer {
+	background-color: $beige3;
+	padding-top: 2px;
+}
+
+.roomformtitlewrapper {
+	background-repeat: repeat-x;
+	background-position: center;
+	text-align: center;
+}
+
+.roomform form {	
+	padding: 0 25px 25px;
+	
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+	
+.roomform form .room-big-field-container {
+	-webkit-flex: 2;
+	-ms-flex:     2;
+	flex:         2;
+	margin-right: 25px;
+}
+	
+.roomform form .room-small-field-container {
+		-webkit-flex: 1;
+		-ms-flex:     1;
+		flex:         1;
+		margin-right: 25px;
+	}
+	
+.roomform form input[type="text"],
+.roomform form input[type="email"],
+.roomform form input[type="url"],
+.roomform form input[type="password"],
+.roomform form input[type="search"],
+.roomform form select {
+	padding: 6px 0 6px 15px;
+	margin: 0 !important;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+	
+.roomform form select {
+	width: 100%;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	outline:none;
+	display: inline-block;
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	appearance:none;
+	cursor:pointer;
+	line-height: 24px;
+	color: $color__text-input;
+	font-family: $font__titles;
+	font-size: 1.6rem;
+	border: 1px solid $color__border-input;
+	border-radius: 0;
+	background-color: $color__text-input-background;
+}
+	
+.roomform form button,
+.roomform form input[type="button"],
+.roomform form input[type="reset"],
+.roomform form input[type="submit"] {
+	margin:0;
 }
