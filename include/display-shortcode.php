@@ -3,9 +3,11 @@
 /**
  * This function handle the short code: rcnw_room_list_home
  *
- * Replace [rcnw_room_list_home number=”x”]
+ * Replace [rcnw_room_list_home number=”x”]Area title[/rcnw_room_list_home]
  * The attribute number represent the number of posts that will be get from the database (default 3)
  * number must be a numeric variable between 2 and 9
+ *
+ * The content variable will contain the title of the box (default: "Our rooms")
  */
 function rcnw_room_list_home( $attr, $content ) {
 	global $post;
@@ -16,6 +18,12 @@ function rcnw_room_list_home( $attr, $content ) {
 		$number = 3;
 	}
 	
+	if( !empty( $content ) ) {
+		$title = esc_html( $content ); 
+	} else {
+		$title = 'Our rooms'; 
+	}
+	
 	$atts = array( // a few default values
 			'posts_per_page' => $number,
 			'post_type' => 'rcnwroom' // post type
@@ -24,7 +32,7 @@ function rcnw_room_list_home( $attr, $content ) {
 	$posts = new WP_Query( $atts );
 	$out = '<div class="external-post-horizontal-list-container">
 				<div class="post-horizontal-list-title-wrapper">
-					<h4 class="post-horizontal-list-title">Our rooms</h4>
+					<h4 class="post-horizontal-list-title">'.$title.'</h4>
 				</div>
 					<div class="post-horizontal-list-box">';
 	
