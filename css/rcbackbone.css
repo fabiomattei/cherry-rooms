@@ -41,6 +41,8 @@
   position: relative; 
 }
 
+/* post-horizontal-list-write-over-img */
+
 .post-horizontal-list-write-over-img { 
    display:none; 
    position: absolute; 
@@ -83,11 +85,11 @@
 }
 	
 .roomform form .room-small-field-container {
-		-webkit-flex: 1;
-		-ms-flex:     1;
-		flex:         1;
-		margin-right: 25px;
-	}
+	-webkit-flex: 1;
+	-ms-flex:     1;
+	flex:         1;
+	margin-right: 25px;
+}
 	
 .roomform form input[type="text"],
 .roomform form input[type="email"],

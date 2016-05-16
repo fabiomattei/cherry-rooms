@@ -55,11 +55,11 @@ function rcnw_room_list_home( $attr, $content ) {
 			}
 
 	        $out .= '<div class="singlepost-horizontal-list-box">
-				<p class="post-horizontal-list-boxthumbnail">'.get_the_post_thumbnail().'
-				<span class="post-horizontal-list-write-over-img">'.get_post_meta($post->ID, 'room_price', true).' '.$room_currency.'</span>
+				<p class="post-horizontal-list-boxthumbnail">' . get_the_post_thumbnail() . '
+				<span class="post-horizontal-list-write-over-img">' . get_post_meta($post->ID, 'room_price', true).' ' . $room_currency . '</span>
 				</p>
-	            <h5><a href="'.get_permalink().'" title="' . get_the_title() . '">'.get_the_title() .'</a></h5>
-	            <p class="post-horizontal-list-desc">'.get_the_content().'</p>';
+	            <h5><a href="' . get_permalink() . '" title="' . get_the_title() . '">' . get_the_title() . '</a></h5>
+	            <p class="post-horizontal-list-desc">' . get_the_content() . '</p>';
 	            // add here more...
 	        $out .= '</div>';
 	
@@ -203,5 +203,3 @@ function rcnw_room_form() {
 }
 
 add_shortcode( 'RCRoomForm', 'rcnw_room_form' );
-
-
