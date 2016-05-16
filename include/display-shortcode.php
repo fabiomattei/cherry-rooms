@@ -83,21 +83,41 @@ add_shortcode( 'RCRoomListHome', 'rcnw_room_list_home' );
 // rename to horizontal list
 
 /**
- * This function handle the short code
+ * This function handle the short code: rcnw_room_form
+ *
+ * Replace [rcnw_room_form number=”x”]Form title[/rcnw_room_form]
+ * The attribute number represent the number of posts that will be get from the database (default 3)
+ * number must be a numeric variable between 2 and 9
+ *
+ * The content variable will contain the title of the box (default: "Book a room")
  */
-function html_form_code() {
+function html_form_code( $attr, $content ) {
 	global $post;
 	
+	// dealing with attributes
+	if ( is_numeric( $attr['number'] ) AND $attr['number'] > 2 AND $attr['number'] < 10 ) {
+		$number = $attr['number'];
+	} else {
+		$number = 3;
+	}
+	
+	// dealing with content
+	if( !empty( $content ) ) {
+		$title = esc_html( $content ); 
+	} else {
+		$title = 'Book a room'; 
+	}
+	
 	$atts = array( // a few default values
-			'posts_per_page' => '3',
-			'post_type' => 'rcnwroom' // post type
-			);
+		'posts_per_page' => $number,
+		'post_type' => 'rcnwroom' // post type
+	);
 			
 	$posts = new WP_Query( $atts );
 	$out = '
 		<div class="roomformboxcontainer">
 			<div class="roomformtitlewrapper">
-				<h4>Book a room</h4>
+				<h4>'.$title.'</h4>
 			</div>
 			<div class="roomform">
 			<form method="post">

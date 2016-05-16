@@ -1,7 +1,7 @@
 <?php
 
 /**
- * This class helps to deal with few settings connected with the cherry-rooms
+ * This class helps to deal with few settings connected with the rcnwroom
  * custom post type.
  * For each room the user can set two variables:
  * - price
