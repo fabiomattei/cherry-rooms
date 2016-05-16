@@ -48,9 +48,8 @@ function rcnw_create_room_post_type() {
 }
 
 
-add_filter( 'post_updated_messages', 'rcnw_room_updated_messages' );
 /**
- * Book update messages.
+ * Room update messages.
  *
  * See /wp-admin/edit-form-advanced.php
  *
@@ -58,6 +57,8 @@ add_filter( 'post_updated_messages', 'rcnw_room_updated_messages' );
  *
  * @return array Amended post update messages with new CPT update messages.
  */
+add_filter( 'post_updated_messages', 'rcnw_room_updated_messages' );
+
 function rcnw_room_updated_messages( $messages ) {
 	$post             = get_post();
 	$post_type        = get_post_type( $post );

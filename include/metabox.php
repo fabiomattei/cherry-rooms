@@ -1,11 +1,11 @@
 <?php
 
 /**
- * This class helps to dial with some setting, connected with the cherry-rooms
+ * This class helps to deal with few settings connected with the cherry-rooms
  * custom post type.
  * For each room the user can set two variables:
- * * price
- * * currency
+ * - price
+ * - currency
  */
 class Room_Price_Meta_Box {
 
