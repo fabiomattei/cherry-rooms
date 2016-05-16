@@ -61,10 +61,10 @@ add_filter( 'post_updated_messages', 'rcnw_room_updated_messages' );
 
 function rcnw_room_updated_messages( $messages ) {
 	$post             = get_post();
-	$post_type        = get_post_type( $post );
+	$post_type        = get_post_type( $post ); // return: rcnwroom
 	$post_type_object = get_post_type_object( $post_type );
 
-	$messages['book'] = array(
+	$messages['rcnwroom'] = array(
 		0  => '', // Unused. Messages start at index 1.
 		1  => __( 'Room updated.', 'rcnw' ),
 		2  => __( 'Custom field updated.', 'rcnw' ),
@@ -100,21 +100,20 @@ function rcnw_room_updated_messages( $messages ) {
 	return $messages;
 }
 
-//display contextual help for Books
-
+//display contextual help for Rooms
 function rcnw_room_add_help_text( $contextual_help, $screen_id, $screen ) {
   //$contextual_help .= var_dump( $screen ); // use this to help determine $screen->id
-  if ( 'book' == $screen->id ) {
+  if ( 'rcnwroom' == $screen->id ) {
     $contextual_help =
       '<p>' . __('Things to remember when adding or editing a room:', 'rcnw') . '</p>' .
       '<ul>' .
-      '<li>' . __('Specify the correct genre such as Mystery, or Historic.', 'rcnw') . '</li>' .
-      '<li>' . __('Specify the correct writer of the book.  Remember that the Author module refers to you, the author of this book review.', 'rcnw') . '</li>' .
+      '<li>' . __('Specify a featured image with a size of xxxx.', 'rcnw') . '</li>' .
+      '<li>' . __('Specify the room per night price and select the correct currency.', 'rcnw') . '</li>' .
       '</ul>' .
-      '<p>' . __('If you want to schedule the book review to be published in the future:', 'rcnw') . '</p>' .
+      '<p>' . __('If you want to schedule the room review to be published in the future:', 'rcnw') . '</p>' .
       '<ul>' .
       '<li>' . __('Under the Publish module, click on the Edit link next to Publish.', 'rcnw') . '</li>' .
-      '<li>' . __('Change the date to the date to actual publish this article, then click on Ok.', 'rcnw') . '</li>' .
+      '<li>' . __('Change the date to the date to actual publish this room, then click on Ok.', 'rcnw') . '</li>' .
       '</ul>' .
       '<p><strong>' . __('For more information:', 'rcnw') . '</strong></p>' .
       '<p>' . __('<a href="http://codex.wordpress.org/Posts_Edit_SubPanel" target="_blank">Edit Posts Documentation</a>', 'rcnw') . '</p>' .

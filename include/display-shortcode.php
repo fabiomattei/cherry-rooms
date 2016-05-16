@@ -12,12 +12,14 @@
 function rcnw_room_list_home( $attr, $content ) {
 	global $post;
 	
+	// dealing with attributes
 	if ( is_numeric( $attr['number'] ) AND $attr['number'] > 2 AND $attr['number'] < 10 ) {
 		$number = $attr['number'];
 	} else {
 		$number = 3;
 	}
 	
+	// dealing with content
 	if( !empty( $content ) ) {
 		$title = esc_html( $content ); 
 	} else {
