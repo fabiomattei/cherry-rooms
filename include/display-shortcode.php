@@ -1,15 +1,25 @@
 <?php
 
 /**
- * This function handle the short code
+ * This function handle the short code: rcnw_room_list_home
+ *
+ * Replace [rcnw_room_list_home number=”x”]
+ * The attribute number represent the number of posts that will be get from the database (default 3)
+ * number must be a numeric variable between 2 and 9
  */
-function rcnw_room_list_home( $atts, $content ) {
+function rcnw_room_list_home( $attr, $content ) {
 	global $post;
 	
+	if ( is_numeric( $attr['number'] ) AND $attr['number'] > 2 AND $attr['number'] < 10 ) {
+		$number = $attr['number'];
+	} else {
+		$number = 3;
+	}
+	
 	$atts = array( // a few default values
-			'posts_per_page' => '3',
+			'posts_per_page' => $number,
 			'post_type' => 'rcnwroom' // post type
-			);
+		);
 			
 	$posts = new WP_Query( $atts );
 	$out = '<div class="external-post-horizontal-list-container">
