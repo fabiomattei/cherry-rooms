@@ -43,3 +43,10 @@ if ( is_admin() ) {
 	include( 'include/display-functions.php');
 	include( 'include/display-shortcode.php');
 }
+
+
+register_deactivation_hook( __FILE__, 'boj_myplugin_uninstall' );
+
+function boj_myplugin_uninstall() { //do something
+	delete_option( RCRO_SETTINGS_KEY );
+}
