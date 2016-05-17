@@ -35,7 +35,7 @@ function rc_rm_init() {
     register_setting(
         'rcrmoptiongroup',                                // option group
         'rc_rm_options',                                  // option name, determine the name of the setting stored in the database
-        'rc_rm_cherry_rooms_validate_options'            // callback function for validation
+        'rc_rm_cherry_rooms_validate_options'             // callback function for validation
     );
 
     add_settings_section(

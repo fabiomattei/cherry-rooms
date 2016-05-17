@@ -18,7 +18,7 @@ define( 'RCRO_PLUGIN_URL' , plugin_dir_url( __FILE__ ) );
 define( 'RCRO_TEXT_DOMAIN', 'cherry-rooms' );
 define( 'RCRO_SLUG',        'cherry-rooms' );
 
-define( 'RCRO_SETTINGS_KEY', 'RCRM_Settings');
+define( 'RCRO_SETTINGS_KEY', 'rc_rm_options');
 
 /*******************************************
 * Global Variables

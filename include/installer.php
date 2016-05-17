@@ -14,7 +14,7 @@ function rcrm_items_create_settings() {
 		"RCSL_Slider_Width"   		=> 1000,
 		"RCSL_Slider_Height"   		=> 500
     ));
-    add_option( 'RCRM_Settings', $default_settings_array );
+    add_option( 'rc_rm_options', $default_settings_array );
 	
 }
 
