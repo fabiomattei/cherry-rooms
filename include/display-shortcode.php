@@ -9,7 +9,7 @@
  *
  * The content variable will contain the title of the box (default: "Our rooms")
  */
-function rcnw_room_list_home( $attr, $content ) {
+function rc_room_horizontal_list( $attr, $content ) {
 	global $post;
 	
 	// dealing with attributes
@@ -78,7 +78,7 @@ function rcnw_room_list_home( $attr, $content ) {
     return ob_get_clean();
 }
 
-add_shortcode( 'RCRoomListHome', 'rcnw_room_list_home' );
+add_shortcode( 'RCRoomHorizontalList', 'rc_room_horizontal_list' );
 
 // rename to horizontal list
 
@@ -202,4 +202,4 @@ function rcnw_room_form() {
     return ob_get_clean();
 }
 
-add_shortcode( 'RCRoomForm', 'rcnw_room_form' );
+add_shortcode( 'RCRoomForm', 'rc_room_form' );
