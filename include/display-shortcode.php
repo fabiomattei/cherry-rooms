@@ -32,11 +32,11 @@ function rc_room_horizontal_list( $attr, $content ) {
 		);
 			
 	$posts = new WP_Query( $atts );
-	$out = '<div class="external-post-horizontal-list-container">
-				<div class="post-horizontal-list-title-wrapper">
-					<h4 class="post-horizontal-list-title">'.$title.'</h4>
+	$out = '<div class="horizontal-list-external-container">
+				<div class="horizontal-list-title-wrapper">
+					<h4 class="horizontal-list-title">'.$title.'</h4>
 				</div>
-					<div class="post-horizontal-list-box">';
+					<div class="horizontal-list-posts-box">';
 	
 	if ($posts->have_posts()) {
 		
@@ -54,12 +54,12 @@ function rc_room_horizontal_list( $attr, $content ) {
     			case 'room_CNY': $room_currency='&yuan;'; break;
 			}
 
-	        $out .= '<div class="singlepost-horizontal-list-box">
-				<p class="post-horizontal-list-boxthumbnail">' . get_the_post_thumbnail() . '
-				<span class="post-horizontal-list-write-over-img">' . get_post_meta($post->ID, 'room_price', true).' ' . $room_currency . '</span>
+	        $out .= '<div class="horizontal-list-post-box">
+				<p class="horizontal-list-post-thumbnail-box">' . get_the_post_thumbnail() . '
+				<span class="horizontal-list-script-over-img">' . get_post_meta($post->ID, 'room_price', true).' ' . $room_currency . '</span>
 				</p>
 	            <h5><a href="' . get_permalink() . '" title="' . get_the_title() . '">' . get_the_title() . '</a></h5>
-	            <p class="post-horizontal-list-desc">' . get_the_content() . '</p>';
+	            <p class="horizontal-list-post-desc">' . get_the_content() . '</p>';
 	            // add here more...
 	        $out .= '</div>';
 	
