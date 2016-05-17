@@ -37,6 +37,7 @@ if ( is_admin() ) {
 	include( 'include/installer.php' );
 	include( 'include/register-posttype.php' );
 	include( 'include/metabox.php' );
+	include( 'include/admin-page.php' );
 } else {
 	// include for client side
 	include( 'include/display-functions.php');
