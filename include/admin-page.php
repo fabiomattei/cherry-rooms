@@ -97,14 +97,14 @@ function rc_rm_cherry_rooms_section_callback() {
 // Display and fill the form field
 function rc_rm_cherry_rooms_setting_input_callback() {
     //get option 'text_string' value from the database
-    $options = get_option( RCSL_OPTIONS_STRING );
+    $options = get_option( RCRO_SETTINGS_KEY );
     $speed = $options['speed'];
     // echo the field
     echo "<input id='speed' name='rc_rm_options[speed]' type='text' value='{$speed}' />";
 }
 
 function rc_rm_cherry_rooms_transition_callback() {
-    $options = get_option( RCSL_OPTIONS_STRING );
+    $options = get_option( RCRO_SETTINGS_KEY );
     if( !isset( $options['transition'] ) ) $options['transition'] = 'fade';
     ?>
     <select name="rc_rm_options[transition]">
@@ -117,7 +117,7 @@ function rc_rm_cherry_rooms_transition_callback() {
 }
 
 function rc_rm_cherry_rooms_easing_callback() {
-    $options = get_option( RCSL_OPTIONS_STRING );
+    $options = get_option( RCRO_SETTINGS_KEY );
     if( !isset( $options['easing'] ) ) $options['easing'] = 'swing';
     ?>
     <select name="rc_rm_options[easing]">
@@ -131,7 +131,7 @@ function rc_rm_cherry_rooms_easing_callback() {
 // Display and fill the form field
 function rc_rm_cherry_rooms_width_callback() {
     //get option 'text_string' value from the database
-    $options = get_option( RCSL_OPTIONS_STRING );
+    $options = get_option( RCRO_SETTINGS_KEY );
     $width = $options['width'];
     // echo the field
     echo "<input id='width' name='rc_rm_options[width]' type='number' value='{$width}' />";
@@ -140,7 +140,7 @@ function rc_rm_cherry_rooms_width_callback() {
 // Display and fill the form field
 function rc_rm_cherry_rooms_height_callback() {
     //get option 'text_string' value from the database
-    $options = get_option( RCSL_OPTIONS_STRING );
+    $options = get_option( RCRO_SETTINGS_KEY );
     $height = $options['height'];
     // echo the field
     echo "<input id='height' name='rc_rm_options[height]' type='number' value='{$height}' />";
