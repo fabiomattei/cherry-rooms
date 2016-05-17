@@ -13,6 +13,7 @@ License: GPLv2
 /*******************************************
 * Plugin CONSTANT
 ********************************************/
+define( 'RCRO_PLUGIN_MAIN_FILE', __FILE__ );
 define( 'RCRO_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 define( 'RCRO_PLUGIN_URL' , plugin_dir_url( __FILE__ ) );
 define( 'RCRO_TEXT_DOMAIN', 'cherry-rooms' );
@@ -34,7 +35,7 @@ define( 'RCRO_SETTINGS_KEY', 'rc_rm_options');
 
 if ( is_admin() ) {
 	// include admin side
-	include( 'include/installer.php' );
+	include( 'include/activate.php' );
 	include( 'include/register-posttype.php' );
 	include( 'include/metabox.php' );
 	include( 'include/admin-page.php' );
@@ -42,11 +43,4 @@ if ( is_admin() ) {
 	// include for client side
 	include( 'include/display-functions.php');
 	include( 'include/display-shortcode.php');
-}
-
-
-register_deactivation_hook( __FILE__, 'boj_myplugin_uninstall' );
-
-function boj_myplugin_uninstall() { //do something
-	delete_option( RCRO_SETTINGS_KEY );
 }
