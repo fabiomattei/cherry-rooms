@@ -13,7 +13,7 @@ function rc_room_horizontal_list( $attr, $content ) {
 	global $post;
 	
 	// dealing with attributes
-	if ( is_numeric( $attr['number'] ) AND $attr['number'] > 2 AND $attr['number'] < 10 ) {
+	if ( isset( $attr['number'] ) AND is_numeric( $attr['number'] ) AND $attr['number'] > 2 AND $attr['number'] < 10 ) {
 		$number = $attr['number'];
 	} else {
 		$number = 3;
@@ -95,7 +95,7 @@ function html_form_code( $attr, $content ) {
 	global $post;
 	
 	// dealing with attributes
-	if ( is_numeric( $attr['number'] ) AND $attr['number'] > 2 AND $attr['number'] < 10 ) {
+	if ( isset( $attr['number'] ) AND is_numeric( $attr['number'] ) AND $attr['number'] > 2 AND $attr['number'] < 10 ) {
 		$number = $attr['number'];
 	} else {
 		$number = 3;
@@ -194,10 +194,10 @@ function deliver_mail() {
     }
 }
 
-function rcnw_room_form() {
+function rc_room_form( $attr, $content ) {
     ob_start();
-    deliver_mail();
-    html_form_code();
+    deliver_mail( $attr, $content );
+    html_form_code( $attr, $content );
 
     return ob_get_clean();
 }
