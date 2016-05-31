@@ -56,7 +56,7 @@ function rc_room_horizontal_list( $attr, $content ) {
 
 	        $out .= '<div class="horizontal-list-post-box">
 				<p class="horizontal-list-post-thumbnail-box">' . get_the_post_thumbnail() . '
-				<span class="horizontal-list-script-over-img">' . get_post_meta($post->ID, 'room_price', true).' ' . $room_currency . '</span>
+				<span class="horizontal-list-script-over-img">' . get_post_meta( $post->ID, 'room_price', true ).' ' . $room_currency . '</span>
 				</p>
 	            <h5><a href="' . get_permalink() . '" title="' . get_the_title() . '">' . get_the_title() . '</a></h5>
 	            <p class="horizontal-list-post-desc">' . get_the_content() . '</p>';
