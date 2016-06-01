@@ -26,7 +26,7 @@ function rcnw_create_room_post_type() {
 		'not_found'          => __( 'No rooms found.', 'rcnw' ),
 		'not_found_in_trash' => __( 'No rooms found in Trash.', 'rcnw' )
 	);
-
+  
 	$args = array(
 		'labels'             => $labels,
 		'public'             => true,
@@ -35,15 +35,15 @@ function rcnw_create_room_post_type() {
 		'show_in_menu'       => true,
 		'show_in_nav_menus'  => true,
 		'query_var'          => true,
-		'rewrite'            => array( 'slug' => 'rcnwroom' ),
+		'rewrite'            => array( 'slug' => RCRO_SLUG ),
 		'capability_type'    => 'post',
 		'has_archive'        => true,
 		'hierarchical'       => false,
 		'menu_position'      => null,
 		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
 	);
-
-	register_post_type( 'rcnwroom', $args );
+	
+	register_post_type( RCRO_SLUG, $args );
 	
 }
 

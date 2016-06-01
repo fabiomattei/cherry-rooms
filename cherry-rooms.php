@@ -16,8 +16,7 @@ License: GPLv2
 define( 'RCRO_PLUGIN_MAIN_FILE', __FILE__ );
 define( 'RCRO_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 define( 'RCRO_PLUGIN_URL' , plugin_dir_url( __FILE__ ) );
-define( 'RCRO_TEXT_DOMAIN', 'cherry-rooms' );
-define( 'RCRO_SLUG',        'cherry-rooms' );
+define( 'RCRO_SLUG',        'rcnwroom' );
 
 define( 'RCRO_SETTINGS_KEY', 'rc_rm_options');
 
