@@ -80,16 +80,11 @@ function rc_room_horizontal_list( $attr, $content ) {
 
 add_shortcode( 'RCRoomHorizontalList', 'rc_room_horizontal_list' );
 
-// rename to horizontal list
-
 /**
- * This function handle the short code: rcnw_room_form
+ * This function handle the HTML for the form contained in the schortcode rcnw_room_form
  *
- * Replace [rcnw_room_form number=”x”]Form title[/rcnw_room_form]
- * The attribute number represent the number of posts that will be get from the database (default 3)
- * number must be a numeric variable between 2 and 9
- *
- * The content variable will contain the title of the box (default: "Book a room")
+ * @param  [array]  $attr    shortcode attributes
+ * @param  [string] $content shortcode content
  */
 function html_form_code( $attr, $content ) {
 	global $post;
@@ -159,7 +154,13 @@ function html_form_code( $attr, $content ) {
 	echo $out;
 }
 
-function deliver_mail() {
+/**
+ * this function send the actual email when a reservation is created by a website visitor
+ * 
+ * @param  [array]  $attr    shortcode attributes
+ * @param  [string] $content shortcode content
+ */
+function deliver_mail( $attr, $content ) {
 
     // if the submit button is clicked, send the email
     if ( isset( $_POST['rm-submitted'] ) ) {
@@ -194,6 +195,15 @@ function deliver_mail() {
     }
 }
 
+/**
+ * This function handle the short code: rcnw_room_form
+ *
+ * Replace [rcnw_room_form number=”x”]Form title[/rcnw_room_form]
+ * The attribute number represent the number of posts that will be get from the database (default 3)
+ * number must be a numeric variable between 2 and 9
+ *
+ * The content variable will contain the title of the box (default: "Book a room")
+ */
 function rc_room_form( $attr, $content ) {
     ob_start();
     deliver_mail( $attr, $content );
