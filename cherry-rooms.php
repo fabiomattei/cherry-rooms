@@ -2,10 +2,10 @@
 
 /*
 Plugin Name: Cherry Rooms
-Plugin URI: http://www.redcherries.net/cherry-rooms
+Plugin URI: http://www.redcherries.net/?rcplugins=cherry-rooms
 Description: This plugin has been implemented in order to be used with the theme Natural Welcome. It implements a custom posttype named "rooms" in order to allow the user to insert "rooms" in his B&B or hotel website. This plugin allows the user to have a form for room reservation (through an email sent to the host). There is the possibility of visualizing the rooms in different ways.
 Version: 1.0.0
-Author: Red Cherries
+Author: Fabio Mattei <fabio@redcherries.net>
 Author URI: http://www.redcherries.net/
 License: GPLv2
 */

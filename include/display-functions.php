@@ -2,7 +2,7 @@
 
 /**
  * This functions check the loaded post, in case a shortcode is present id loads
- * necessary css in order to show the gallery
+ * necessary css in order to have the page display properly
  */
 function RCSL_Cherry_Room_ShortCode_Detect() {
     global $wp_query;
