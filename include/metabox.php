@@ -123,7 +123,7 @@ class Room_Price_Meta_Box {
 
 		// Sanitize user input.
 		$room_new_price = isset( $_POST[ 'room_price' ] ) ? sanitize_text_field( $_POST[ 'room_price' ] ) : '';
-		$room_new_currency = isset( $_POST[ 'room_currency' ] ) ? $_POST[ 'room_currency' ] : '';
+		$room_new_currency = isset( $_POST[ 'room_currency' ] ) ? sanitize_text_field( $_POST[ 'room_currency' ] ) : '';
 
 		// Update the meta field in the database.
 		update_post_meta( $post_id, 'room_price', $room_new_price );
