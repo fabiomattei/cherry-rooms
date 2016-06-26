@@ -100,9 +100,17 @@ function rcnw_room_updated_messages( $messages ) {
 	return $messages;
 }
 
-//display contextual help for Rooms
-function rcnw_room_add_help_text( $contextual_help, $screen_id, $screen ) {
-  //$contextual_help .= var_dump( $screen ); // use this to help determine $screen->id
+/**
+ * display contextual help for rcnwroom post type
+ * @param  [string] $old_help      Help text that appears on the screen.
+ * @param  [string] $screen_id     Screen ID.
+ * @param  [WP_Screen] $screen     Current WP_Screen instance.
+ * @return [string]                formatted text for contextual help
+ */
+function rcnw_room_add_help_text( $old_help, $screen_id, $screen ) {
+  // use this to help determine $screen->id
+  // $contextual_help .= var_dump( $screen ); 
+  
   if ( 'rcnwroom' == $screen->id ) {
     $contextual_help =
       '<p>' . __('Things to remember when adding or editing a room:', 'rcnw') . '</p>' .
@@ -118,10 +126,8 @@ function rcnw_room_add_help_text( $contextual_help, $screen_id, $screen ) {
       '<p><strong>' . __('For more information:', 'rcnw') . '</strong></p>' .
       '<p>' . __('<a href="http://codex.wordpress.org/Posts_Edit_SubPanel" target="_blank">Edit Posts Documentation</a>', 'rcnw') . '</p>' .
       '<p>' . __('<a href="http://wordpress.org/support/" target="_blank">Support Forums</a>', 'rcnw') . '</p>' ;
-  } elseif ( 'edit-book' == $screen->id ) {
-    $contextual_help =
-      '<p>' . __('This is the help screen displaying the table of books blah blah blah.', 'rcnw') . '</p>' ;
-  }
+  } 
+
   return $contextual_help;
 }
 
