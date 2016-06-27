@@ -123,10 +123,10 @@ function html_form_code( $attr, $content ) {
 					<input type="text" name="rm-email" placeholder="email" >
 				</div> <!-- .room-big-field-container -->
 				<div class="room-small-field-container">
-					<input type="text" id="datepicker" name="rm-arrival" placeholder="arrival">
+					<input type="text" class="rcroomdatepicker" name="rm-arrival" placeholder="arrival">
 				</div> <!-- .room-small-field-container -->
 				<div class="room-small-field-container">
-				<input type="text" id="datepicker2" name="rm-departure" placeholder="departure">
+				<input type="text" class="rcroomdatepicker" name="rm-departure" placeholder="departure">
 				</div> <!-- .room-small-field-container -->
 				<div class="room-small-field-container">
 					<select name="rm-room">';
