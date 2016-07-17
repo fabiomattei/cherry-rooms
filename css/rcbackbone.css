@@ -8,9 +8,11 @@
 .horizontal-list-post-box {
   float: left;
   margin: 0px 0 25px !important;
-  padding: 0 25px 0;
-  max-width: 33%; }
+  padding: 0 25px 0; }
 
+@media screen and (min-width: 767px) {
+  .horizontal-list-post-box {
+    max-width: 33%; } }
 .horizontal-list-title-wrapper {
   background-repeat: repeat-x;
   background-position: center;
@@ -51,6 +53,18 @@
   background-position: center;
   text-align: center; }
 
+@media screen and (max-width: 767px) {
+  .roomform form {
+    flex-flow: column; }
+    .roomform form .room-big-field-container {
+      margin-bottom: 4px; }
+    .roomform form .room-small-field-container {
+      margin-bottom: 4px; } }
+@media screen and (min-width: 768px) {
+  .roomform form .room-big-field-container {
+    margin-right: 25px; }
+  .roomform form .room-small-field-container {
+    margin-right: 25px; } }
 .roomform form {
   padding: 0 25px 25px;
   display: -webkit-flex;
@@ -59,13 +73,11 @@
   .roomform form .room-big-field-container {
     -webkit-flex: 2;
     -ms-flex: 2;
-    flex: 2;
-    margin-right: 25px; }
+    flex: 2; }
   .roomform form .room-small-field-container {
     -webkit-flex: 1;
     -ms-flex: 1;
-    flex: 1;
-    margin-right: 25px; }
+    flex: 1; }
   .roomform form input[type="text"],
   .roomform form input[type="email"],
   .roomform form input[type="url"],
