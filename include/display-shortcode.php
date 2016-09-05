@@ -3,11 +3,15 @@
 /**
  * This function handle the short code: rcnw_room_list_home
  *
- * Replace [rcnw_room_list_home number=”x”]Area title[/rcnw_room_list_home]
+ * [rcnw_room_list_home number=”x”]Area title[/rcnw_room_list_home]
+ *
  * The attribute number represent the number of posts that will be get from the database (default 3)
  * number must be a numeric variable between 2 and 9
  *
  * The content variable will contain the title of the box (default: "Our rooms")
+ *
+ * @param  [array]  $attr    shortcode attributes
+ * @param  [string] $content shortcode content
  */
 function rc_room_horizontal_list( $attr, $content ) {
 	global $post;

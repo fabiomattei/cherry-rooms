@@ -1,9 +1,8 @@
 <?php
 
 /**
- * This class helps to deal with few settings connected with the rcnwroom
- * custom post type.
- * For each room the user can set two variables:
+ * This class It adds two custom fields connected to the rcnwroom post type.
+ * These fields are:
  * - price
  * - currency
  */

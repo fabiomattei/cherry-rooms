@@ -1,8 +1,9 @@
 <?php
 
 /**
- * This functions check the loaded post, in case a shortcode is present id loads
- * necessary css in order to have the page display properly
+ * This function checks the loaded posts, in case a shortcode is present
+ * a shortcode definite by this plugin it loads necessary css 
+ * in order to have the page display properly
  */
 function RCSL_Cherry_Room_ShortCode_Detect() {
     global $wp_query;
@@ -23,4 +24,5 @@ function RCSL_Cherry_Room_ShortCode_Detect() {
 		
     } //end of foreach
 }
+
 add_action( 'wp', 'RCSL_Cherry_Room_ShortCode_Detect' );
